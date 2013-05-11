@@ -44,4 +44,4 @@ buildOrder = execStateT prog [standardGame]
 
 main
   = do x <- buildOrder
-       renderableToPNGFile (toRenderable $ chart x) 640 480 "./buildOrder.png"
+       renderableToPNGFile (toRenderable $ chart x) 640 480 "./BuildOrder.png"

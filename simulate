@@ -1,3 +1,9 @@
 #!/bin/bash
 
-ghc -o aoe2sim $1
+NAME=${1:0:-3}
+
+ghc -o aoe2sim $NAME.hs
+./aoe2sim
+
+echo -e "Content-Type: text/html\n\n"
+echo "<html><head><title>Ein Title</title></head><body><img src="./$NAME.png" />Hello, World!</body></html>"
