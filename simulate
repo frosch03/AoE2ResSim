@@ -1,9 +1,19 @@
 #!/bin/bash
 
-NAME=${1:0:-3}
+LOCDIR=`pwd`
+
+SRCDIR="/home/frosch03/frosch03.de/www/AoE2ResSim"
+
+#NAME=${1:0:-3}
+NAME="BuildOrder"
+
+
+cd $SRCDIR
 
 ghc -o aoe2sim $NAME.hs
 ./aoe2sim
 
+cd $LOCDIR
+
 echo -e "Content-Type: text/html\n\n"
-echo "<html><head><title>Ein Title</title></head><body><img src="./$NAME.png" />Hello, World!</body></html>"
+echo "<html><head><title>AoE2 Ressources Simulation</title></head><body><img src="\"../$NAME.png\"" /></body></html>"
