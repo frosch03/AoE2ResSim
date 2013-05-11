@@ -17,7 +17,7 @@ import ResourceSimulator.Chart
 
 -- Buildorder : 
 
-test = execStateT prog [standardGame]
+buildOrder = execStateT prog [standardGame]
   where prog =
           do
              idle `toBuild` house
@@ -41,10 +41,7 @@ test = execStateT prog [standardGame]
              wait 60
              wait 60
 
----------------
-
 
 main
-  = do x <- test
-       renderableToWindow (toRenderable  $ chart x) 640 480
-       -- renderableToPNGFile (toRenderable $ chart x) 640 480 "/tmp/test.png"
+  = do x <- buildOrder
+       renderableToPNGFile (toRenderable $ chart x) 640 480 "./buildOrder.png"

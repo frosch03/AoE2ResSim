@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ghc -o aoe2sim $1
